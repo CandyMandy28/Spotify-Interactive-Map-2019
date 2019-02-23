@@ -7,5 +7,5 @@ setup(
    author='Amanda Wang',
    author_email='amanda.wang294@gmail.com',
    packages=['Spotify Interactive Map: Setup'],
-   install_requires=['spotipy', 'pipenv']
+   install_requires=['spotipy', 'Flask']
 )
