@@ -1,5 +1,7 @@
 import spotipy
 import config
+import node
+
 from spotipy.oauth2 import SpotifyClientCredentials
 
 client_credentials_manager = SpotifyClientCredentials(client_id=config.client_id, client_secret=config.client_secret)
@@ -13,3 +15,18 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 #         playlists = sp.next(playlists)
 #     else:
 #         playlists = None
+
+
+artist = sp.artist("64KEffDW9EtZ1y2vBYgq8T")
+
+
+
+#print("test")
+#print(artist)
+#thisArtist = node.Node(artist)
+#thisArtist.size()
+#thisArtist.artistLink()
+#thisArtist.picture()
+
+
+#spotify:artist:64KEffDW9EtZ1y2vBYgq8T
