@@ -34,4 +34,6 @@
 *.out
 *.app
 
+# Python
 config.py
+__pycache__
