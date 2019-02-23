@@ -16,10 +16,8 @@ This is an interactive web map of artists and albums pulled from the Spotify API
 
 3. Create a Spotify App, and get your Client ID and Client Secret. Copy those tokens into your `config.py`
 
-3. You should be done!
+3. You should be done with setup!
 
-## How to run
-In your terminal, run: 
-`pipenv run python main.py`
+4. Run `main.py` in a server of sorts like Heroku.
 
 *This will execute the `main.py` file with the environment variables.*
