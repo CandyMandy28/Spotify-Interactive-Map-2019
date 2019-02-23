@@ -1,6 +1,7 @@
 import spotipy
 import config
 import node
+import branch
 
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -21,12 +22,10 @@ artist = sp.artist("64KEffDW9EtZ1y2vBYgq8T")
 
 
 
-#print("test")
+print("test")
 #print(artist)
-#thisArtist = node.Node(artist)
-#thisArtist.size()
-#thisArtist.artistLink()
-#thisArtist.picture()
+thisArtist = node.Node(artist)
+thisBranch = branch.Edge("first", "second")
 
 
 #spotify:artist:64KEffDW9EtZ1y2vBYgq8T
