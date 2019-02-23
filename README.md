@@ -2,6 +2,7 @@
 by the hAcKiLlinOis2019Squad (Amanda Wang, Charles Kuch, and Japneet Singh)
 
 This is an interactive web map of artists and albums pulled from the Spotify API.
+Our project uses [Spotipy](https://spotipy.readthedocs.io/en/latest/).
 
 ## Installation & Setup
 1. Please have this Repository cloned by running:
@@ -10,7 +11,7 @@ This is an interactive web map of artists and albums pulled from the Spotify API
 1. Run in your terminal:
 `python setup.py install`
 
-2. Duplicate and rename `config_example.py` to `config.py`
+2. Duplicate and rename `config_example.ini` to `config.ini`
 
 3. If you have Spotify Premium, please go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
 
