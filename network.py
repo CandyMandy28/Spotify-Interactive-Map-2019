@@ -27,8 +27,8 @@ class Node:
 
     def branch(self):
         for collab in self.collaborators:
-            if collab not in network.node_ids:
-                network.node_ids.add(collab)
+            if collab not in self.network.node_ids:
+                self.network.node_ids.add(collab)
 
 
 class Edge:

@@ -11,7 +11,7 @@ Our deployment is displayed here on [Heroku](https://spotify-interactive-map-19.
 `git clone https://github.com/CandyMandy28/hAcKiLlinOis2019Squad`
 
 1. Run in your terminal:
-`python setup.py install`
+`pip install -r requirements.txt`
 
 2. Duplicate and rename `config_example.ini` to `config.ini`
 
