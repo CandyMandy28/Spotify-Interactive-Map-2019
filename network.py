@@ -4,9 +4,11 @@ from spotify_ops import sp
 
 
 class Node:
-    def __init__(self, artist):
-        self.artist = artist
-        self.id = artist['id']
+    def __init__(self, artist_id, network):
+        self.id = artist_id
+        self.network = network
+
+        self.artist = sp.artist(artist_id)
         self.radius = self.artist['popularity']
         self.pics = self.artist['images']
         self.url = self.artist['external_urls']['spotify']
@@ -24,6 +26,9 @@ class Node:
                         self.collaborators.add(artist_id)
 
     def branch(self):
+        for collab in self.collaborators:
+            if collab not in network.node_ids:
+                network.node_ids.add(collab)
 
 
 class Edge:
@@ -39,4 +44,6 @@ class Edge:
         return self.songList
 
 class Network:
-    
+    def __init__(self):
+        self.node_ids = set()
+        self.collab_edges = set()
