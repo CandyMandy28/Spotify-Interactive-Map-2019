@@ -27,8 +27,12 @@ class Node:
                         self.collaborators.add(artist_id)
 
     def branch(self):
+        # collab is an artist id
+        # node_id is an artist id
         for collab in self.collaborators:
-            if collab not in self.network.node_ids:
+            if collab in self.network.node_ids:
+                self.network.addEdge(self.id, collab)
+            else:
                 self.network.addNode(collab)
                 self.network.addEdge(self.id, collab)
 
