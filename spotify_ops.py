@@ -8,6 +8,7 @@ sp = spotipy.Spotify(client_credentials_manager=_client_credentials_manager)
 
 glass_animals_id = "spotify:artist:4yvcSjfu4PC0CYQyLy4wSq"
 celeste_album_id = "spotify:album:5OZHQ7KG8k04IOkF50fACO"
+shelter_id = "spotify:track:2CgOd0Lj5MuvOqzqdaAXtS"
 
 """
 Return a set of album IDs belonging to an artist.
@@ -18,14 +19,13 @@ def artist_albums_set(artist_id):
     albums = set()
     
     while True:
-        response = sp.artist_albums(artist_id, limit=paging_limit, offset=paging_offset)
+        response = sp.artist_albums(artist_id, limit=paging_limit, offset=paging_offset, album_type='album')
         albums = set()
         
         paging_offset += paging_limit
         
         for album in response['items']:
             albums.add(album['id'])
-            print(album['id'], album['name'])
 
         if not response['next']:
             break
@@ -53,3 +53,16 @@ def album_tracks_set(album_id):
             break
     
     return tracks
+
+"""
+Return a set of artists given a track.
+"""
+def track_artists_set(track_id):
+    artists = set()
+   
+    response = sp.track(track_id)
+    for artist in response['artists']:
+        artists.add(artist['id'])
+        print(artist['id'], artist['name'])
+
+    return artists
