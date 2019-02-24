@@ -65,21 +65,3 @@ def track_artists_set(track_id):
         artists.add(artist['id'])
         # print(artist['id'], artist['name'])
     return artists
-
-"""
-Get a list of tracks by an artist with additional collaborators.
-"""
-def find_collabs(artist_id):
-    collabs = {}
-    album_ids = artist_albums_set(artist_id)
-    for album in album_ids:
-        track_ids = album_tracks_set(album)
-        for track in track_ids:
-            artists_set = track_artists_set(track)
-            if len(artists_set) > 1:
-                collabs[track] = artists_set
-
-    return collabs
-    
-collabs = find_collabs("spotify:artist:3dz0NnIZhtKKeXZxLOxCam")
-"spotify:track:2CgOd0Lj5MuvOqzqdaAXtS"
