@@ -15,12 +15,12 @@ class Node:
         #spotifyUrl = urls['spotify']
 
 
-    def branch(self):
+    def find_collab(self):
         album_ids = spotify_ops.artist_albums_set(self.id)
         for album_id in album_ids:
             track_ids = spotify_ops.album_tracks_set(album_id)
             for track_id in track_ids:
                 artist_ids = spotify_ops.track_artists_set(track_id)
                 for artist_id in artist_ids:
-                    if artist_id != self.id:
+                    if artist_id != self.id:     # doesn't allow the node artist to be in collaborator set
                         self.collaborators.add(artist_id)
