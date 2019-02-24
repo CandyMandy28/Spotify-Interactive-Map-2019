@@ -1,4 +1,4 @@
-from pynteractive import *
+import pynteractive
 import network
 import artist
 
