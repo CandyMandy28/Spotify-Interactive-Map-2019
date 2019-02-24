@@ -1,6 +1,28 @@
 from flask import Flask
+from flask import request
 
 app = Flask(__name__)
+
+# Command to run
+# FLASK_APP=hello.py flask run
+
+@app.route('/')
+def welcome():
+    return "Welcome to Spotify Interactive Map!\nPlease type in an Artist that you would like to see!"
+
+@app.route('/<artist_id>')
+def artist(artist_id):
+    #start the map
+    pass
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # do login
+        pass
+    else:
+        # show login form
+        pass
 
 # import os
 
@@ -33,8 +55,3 @@ app = Flask(__name__)
 #         return "Welcome to Spotify Interactive Map!\nPlease type in an Artist that you would like to see!"
 
 #     return app
-
-# @app.route('/')
-# def welcome():
-#     return 
-
