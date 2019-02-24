@@ -16,10 +16,7 @@ def addArtist(artist):
 
 # add edge to the nodes
 def addConnection(artist, other_artist, album):
-    graph.addEdge(  artist.name,
-                    other_artist.name,
-                    width=4,
-                    label=album)
+    pass
 
 def clear():
     graph.clear()
