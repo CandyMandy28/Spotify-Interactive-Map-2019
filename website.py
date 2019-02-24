@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 
 app = Flask(__name__)
 
@@ -12,13 +13,16 @@ def welcome():
 @app.route('/<artist_id>')
 def artist(artist_id):
     #start the map
+    pass
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         # do login
+        pass
     else:
         # show login form
+        pass
 
 # import os
 
