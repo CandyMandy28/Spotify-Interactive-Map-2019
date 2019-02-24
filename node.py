@@ -10,9 +10,7 @@ class Node:
         self.radius = self.artist['popularity']
         self.pics = self.artist['images']
         self.url = self.artist['external_urls']['spotify']
-        print(self.url)
         self.collaborators = set()
-        #spotifyUrl = urls['spotify']
 
 
     def find_collab(self):
