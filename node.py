@@ -13,6 +13,6 @@ class Node:
 
 
     def branch(self):
-        print()
+        albums = sp.artist_albums
         
 
