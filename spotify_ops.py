@@ -19,7 +19,7 @@ def artist_albums_set(artist_id):
     albums = set()
     
     while True:
-        response = sp.artist_albums(artist_id, limit=paging_limit, offset=paging_offset, album_type='album')
+        response = sp.artist_albums(artist_id, limit=paging_limit, offset=paging_offset, album_type='album,single')
         albums = set()
         
         paging_offset += paging_limit
@@ -63,6 +63,23 @@ def track_artists_set(track_id):
     response = sp.track(track_id)
     for artist in response['artists']:
         artists.add(artist['id'])
-        print(artist['id'], artist['name'])
-
+        # print(artist['id'], artist['name'])
     return artists
+
+"""
+Get a list of tracks by an artist with additional collaborators.
+"""
+def find_collabs(artist_id):
+    collabs = {}
+    album_ids = artist_albums_set(artist_id)
+    for album in album_ids:
+        track_ids = album_tracks_set(album)
+        for track in track_ids:
+            artists_set = track_artists_set(track)
+            if len(artists_set) > 1:
+                collabs[track] = artists_set
+
+    return collabs
+    
+collabs = find_collabs("spotify:artist:3dz0NnIZhtKKeXZxLOxCam")
+"spotify:track:2CgOd0Lj5MuvOqzqdaAXtS"
