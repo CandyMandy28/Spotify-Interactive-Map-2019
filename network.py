@@ -11,9 +11,11 @@ class Node:
         self.artist = Artist(artist_id)
 
     def branch(self):
-        for collab in self.artist.collaborators:
+        # collab is an artist id
+        # node_id is an artist id
+        for collab in self.collaborators:
             if collab in self.network.node_ids:
-                pass
+                self.network.addEdge(self.id, collab)
             else:
                 self.network.addNode(collab)
                 self.network.addEdge(self.id, collab)
