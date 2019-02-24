@@ -22,3 +22,21 @@ class Node:
                 for artist_id in artist_ids:
                     if artist_id != self.id:     # doesn't allow the node artist to be in collaborator set
                         self.collaborators.add(artist_id)
+
+    def branch(self):
+
+
+class Edge:
+    def __init__(self, id1, id2):
+        self.id1 = id1
+        self.id2 = id2
+        self.songList = set()
+
+    def addSong(self, track):
+        self.songList.add(track)
+
+    def getSongList(self):
+        return self.songList
+
+class Network:
+    
