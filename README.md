@@ -2,7 +2,9 @@
 by the hAcKiLlinOis2019Squad (Amanda Wang, Charles Kuch, and Japneet Singh)
 
 This is an interactive web map of artists and albums pulled from the Spotify API.
-Our project uses [Spotipy](https://spotipy.readthedocs.io/en/latest/).
+Our project uses [Spotipy](https://spotipy.readthedocs.io/en/latest/) and [Flask](http://flask.pocoo.org/docs/1.0/).
+
+Our deployment is displayed here on [Heroku](https://spotify-interactive-map-19.herokuapp.com/).
 
 ## Installation & Setup
 1. Please have this Repository cloned by running:
