@@ -3,10 +3,10 @@ import spotify_ops
 from spotify_ops import sp
 
 class Artist:
-    def __init__(self, id, ):
-        self.id = id
+    def __init__(self, artist_id, populate=True):
+        self.id = artist_id
 
-        request = sp.artist(id)
+        request = sp.artist(artist_id)
 
         self.name = request['name']
         self.popularity = request['popularity']
@@ -18,10 +18,11 @@ class Artist:
         self.albums = set()
         self.tracks = set()
         
-        self._populate()
+        if (populate):
+            self._populate()
 
     def __repr__(self):
-        return self.uri
+        return "{" + self.uri + ", " + self.name + "}"
     
     def __str__(self):
         return self.name
@@ -48,3 +49,9 @@ class Artist:
 # glass_animals = Artist("spotify:artist:4yvcSjfu4PC0CYQyLy4wSq")
 # print(glass_animals)
 # print(glass_animals.collaborators)
+# collabs = []
+# for aid in glass_animals.collaborators:
+#     art = Artist(aid, populate=False)
+#     collabs.append(art)
+
+# print(str(collabs))
